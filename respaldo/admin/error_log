@@ -1,0 +1,24 @@
+[02-Sep-2025 21:53:07 UTC] PHP Warning:  Undefined array key "id" in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 103
+[02-Sep-2025 21:53:07 UTC] PHP Warning:  Undefined array key "id" in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 122
+[02-Sep-2025 21:53:07 UTC] PHP Warning:  Undefined array key "nombre" in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 127
+[02-Sep-2025 21:53:07 UTC] PHP Warning:  Undefined array key "permisos" in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 128
+[02-Sep-2025 21:53:07 UTC] PHP Warning:  Undefined variable $permisos in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 135
+[02-Sep-2025 21:53:07 UTC] PHP Warning:  Undefined variable $permisos in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 136
+[02-Sep-2025 21:53:07 UTC] PHP Warning:  Undefined variable $permisos in /home/urbinawe/tapid.mx/registro/admin/views/whiteList.php on line 3
+[02-Sep-2025 21:53:07 UTC] PHP Warning:  Undefined variable $permisos in /home/urbinawe/tapid.mx/registro/admin/views/whiteList.php on line 77
+[24-Sep-2025 03:23:09 UTC] PHP Warning:  Undefined array key "id" in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 103
+[24-Sep-2025 03:23:09 UTC] PHP Warning:  Undefined array key "id" in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 122
+[24-Sep-2025 03:23:09 UTC] PHP Warning:  Undefined array key "nombre" in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 127
+[24-Sep-2025 03:23:09 UTC] PHP Warning:  Undefined array key "permisos" in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 128
+[24-Sep-2025 03:23:09 UTC] PHP Warning:  Undefined variable $permisos in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 135
+[24-Sep-2025 03:23:09 UTC] PHP Warning:  Undefined variable $permisos in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 136
+[24-Sep-2025 03:23:09 UTC] PHP Warning:  Undefined variable $permisos in /home/urbinawe/tapid.mx/registro/admin/views/whiteList.php on line 3
+[24-Sep-2025 03:23:09 UTC] PHP Warning:  Undefined variable $permisos in /home/urbinawe/tapid.mx/registro/admin/views/whiteList.php on line 77
+[26-Sep-2025 01:53:47 UTC] PHP Warning:  Undefined array key "id" in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 103
+[26-Sep-2025 01:53:47 UTC] PHP Warning:  Undefined array key "id" in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 122
+[26-Sep-2025 01:53:47 UTC] PHP Warning:  Undefined array key "nombre" in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 127
+[26-Sep-2025 01:53:47 UTC] PHP Warning:  Undefined array key "permisos" in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 128
+[26-Sep-2025 01:53:47 UTC] PHP Warning:  Undefined variable $permisos in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 135
+[26-Sep-2025 01:53:47 UTC] PHP Warning:  Undefined variable $permisos in /home/urbinawe/tapid.mx/registro/admin/views/theme.php on line 136
+[26-Sep-2025 01:53:47 UTC] PHP Warning:  Undefined variable $permisos in /home/urbinawe/tapid.mx/registro/admin/views/whiteList.php on line 3
+[26-Sep-2025 01:53:47 UTC] PHP Warning:  Undefined variable $permisos in /home/urbinawe/tapid.mx/registro/admin/views/whiteList.php on line 77

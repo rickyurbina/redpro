@@ -1,0 +1,17 @@
+
+[31-Oct-2025 03:15:27 UTC] PHP Notice:  Undefined index: id in /home/rickurbi/redproductoresunidos.com/admin/views/theme.php on line 103
+[31-Oct-2025 03:15:27 UTC] PHP Notice:  Undefined index: id in /home/rickurbi/redproductoresunidos.com/admin/views/theme.php on line 122
+[31-Oct-2025 03:15:27 UTC] PHP Notice:  Undefined index: nombre in /home/rickurbi/redproductoresunidos.com/admin/views/theme.php on line 127
+[31-Oct-2025 03:15:27 UTC] PHP Notice:  Undefined index: permisos in /home/rickurbi/redproductoresunidos.com/admin/views/theme.php on line 128
+[31-Oct-2025 03:15:27 UTC] PHP Notice:  Undefined variable: permisos in /home/rickurbi/redproductoresunidos.com/admin/views/theme.php on line 135
+[31-Oct-2025 03:15:27 UTC] PHP Notice:  Undefined variable: permisos in /home/rickurbi/redproductoresunidos.com/admin/views/theme.php on line 136
+[31-Oct-2025 03:15:27 UTC] PHP Notice:  Undefined variable: permisos in /home/rickurbi/redproductoresunidos.com/admin/views/whiteList.php on line 3
+[31-Oct-2025 03:15:27 UTC] PHP Notice:  Undefined variable: permisos in /home/rickurbi/redproductoresunidos.com/admin/views/whiteList.php on line 78
+[31-Oct-2025 17:24:52 UTC] PHP Notice:  Undefined index: id in /home/rickurbi/redproductoresunidos.com/admin/views/theme.php on line 103
+[31-Oct-2025 17:24:52 UTC] PHP Notice:  Undefined index: id in /home/rickurbi/redproductoresunidos.com/admin/views/theme.php on line 122
+[31-Oct-2025 17:24:52 UTC] PHP Notice:  Undefined index: nombre in /home/rickurbi/redproductoresunidos.com/admin/views/theme.php on line 127
+[31-Oct-2025 17:24:52 UTC] PHP Notice:  Undefined index: permisos in /home/rickurbi/redproductoresunidos.com/admin/views/theme.php on line 128
+[31-Oct-2025 17:24:52 UTC] PHP Notice:  Undefined variable: permisos in /home/rickurbi/redproductoresunidos.com/admin/views/theme.php on line 135
+[31-Oct-2025 17:24:52 UTC] PHP Notice:  Undefined variable: permisos in /home/rickurbi/redproductoresunidos.com/admin/views/theme.php on line 136
+[31-Oct-2025 17:24:52 UTC] PHP Notice:  Undefined variable: permisos in /home/rickurbi/redproductoresunidos.com/admin/views/whiteList.php on line 3
+[31-Oct-2025 17:24:52 UTC] PHP Notice:  Undefined variable: permisos in /home/rickurbi/redproductoresunidos.com/admin/views/whiteList.php on line 78
