@@ -68,7 +68,7 @@
 					<div class="card-body ">
 						<h2 class="text-dark  mt-0 ">
 							<?php
-							echo "$";
+							//echo "$";
 							// $registro = new ComunController();
 							// $registro->sumaIngresos("ingresos");
 							?>

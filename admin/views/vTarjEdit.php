@@ -1,19 +1,32 @@
+<?php
+
+$busca = $_GET["idEditar"];
+$perfil = CitasController::buscaPerfil($busca, "solicitudes");
+
+
+// $padec = json_decode($busca['padecimientos'], true);
+
+?>
+
+<!-- ==============================================================================================================-->
+
 <div class="page-header">
     <div class="card-options" style="margin-right: 100px;">
 
         <a class="btn btn-cyan text-gray-dark btn-lg mb-1" href="index.php?page=inicio"><i class="zmdi zmdi-home" style="color:white" title="Volver a Inicio" data-toggle="tooltip"></i></a>&nbsp
 
-        <a class="btn btn-cyan btn-lg mb-1" href="index.php?page=vPacienteAdd"><i class="fa fa-user-plus" data-toggle="tooltip" title="Agregar Nuevo Paciente" data-original-title="fa fa-user-plus"></i></a>&nbsp
+        <!-- <a class="btn btn-cyan btn-lg mb-1" href="index.php?page=vPacienteAdd"><i class="fa fa-user-plus" data-toggle="tooltip" title="Agregar Nuevo Paciente" data-original-title="fa fa-user-plus"></i></a>&nbsp
 
-        <a class="btn btn-cyan text-gray-dark btn-lg mb-1" href="index.php?page=vNuevaCita"><i class="fa fa-calendar-plus-o" style="color:white" title="Agendar Nueva Cita" data-toggle="tooltip"></i></a>
+        <a class="btn btn-cyan text-gray-dark btn-lg mb-1" href="index.php?page=vNuevaCita"><i class="fa fa-calendar-plus-o" style="color:white" title="Agendar Nueva Cita" data-toggle="tooltip"></i></a> -->
 
     </div>
 </div>
 <div class="row ">
     <div class="col-lg-8">
         <form class="card" method="POST" enctype="multipart/form-data">
+            <input type="text" name="perfilId" class="form-control" value="<?php echo $busca; ?>" hidden />
             <div class="card-header">
-                <h3 class="card-title">Nuevo Registro </h3>
+                <h3 class="card-title">Editar Registro </h3>
                 <div class="card-options">
                     <!-- <h3 id="labelCosto">$ </h3> -->
                     <input type="text" class="form-control" name="responsable" value="<?php echo $_SESSION["id"]; ?>" hidden >
@@ -23,14 +36,14 @@
             <div class="card-body">
 
                 <div class="row">
-                    <div class="col-sm-12 col-md-12">
+                    <!-- <div class="col-sm-12 col-md-12">
                         <h4><br>Datos Personales <br> &nbsp;</h4>
                     </div>
                     <div class="col-lg-5 col-sm-12">
                             <label class="form-label">Foto/Logo ...  en formato cuadrado</label>
                             <input type="file" class="dropify" name="foto" id="foto" data-max-file-size="1M"
-                            data-allowed-file-extensions="jpg jpeg png" required>
-                    </div>
+                            data-allowed-file-extensions="jpg jpeg png">
+                    </div> -->
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-12">
@@ -39,19 +52,19 @@
                     <div class="col-sm-12 col-md-5">
                         <div class="form-group">
                             <label class="form-label">Nombres (sin caracteres especiales " , . - / ")</label>
-                            <input type="text" class="form-control" name="nombres" placeholder="Juan" required>
+                            <input type="text" class="form-control" name="nombres" placeholder="Juan" value="<?php echo $perfil["nombres"]; ?>" required>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             <label class="form-label">Apellidos (sin caracteres especiales ", . - / ")</label>
-                            <input type="text" class="form-control" name="apellidos" placeholder="Perez García" required>
+                            <input type="text" class="form-control" name="apellidos" placeholder="Perez García" value="<?php echo $perfil["apellidos"]; ?>" required>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             <label class="form-label">CURP</label>
-                            <input type="text" class="form-control" name="curp" placeholder="" required>
+                            <input type="text" class="form-control" name="curp" placeholder="" value="<?php echo $perfil["curp"]; ?>" required>
                         </div>
                     </div>
 
@@ -60,12 +73,23 @@
                             <label class="form-label" style="margin-left:15px">Fecha de Nacimiento</label>
                             <div class="row gutters-xs" style="margin-left:8px">
                             <?php
-                                $fechaN="";
+                                $fechaN=$perfil['fechaNac'];
                                 $fecha = CitasController::fechaAdd($fechaN);
                                 ?>
                             </div>
                         </div>
                     </div>
+
+                    <!-- <div class="col-sm-12 col-md-8">
+                        <div class="form-group">
+                            <div class="form-label">Membresía</div>
+                            <label class="custom-switch">
+                                <input type="checkbox" name="activo" class="custom-switch-input" <?php //echo ($perfil['activo']) ? 'checked' : ""; ?>>
+                                <span class="custom-switch-indicator"></span>
+                                <span class="custom-switch-description">Acceso al sistema</span>
+                            </label>
+                        </div>
+                    </div> -->
 
                 </div>
                 <div class="row">
@@ -76,29 +100,29 @@
                     <div class="col-sm-12 col-md-5">
                         <div class="form-group">
                             <label class="form-label">Teléfono Fijo</label>
-                            <input type="text" class="form-control" name="telefonoFijo" data-inputmask="'mask' : '(999) 999-9999'" required>
+                            <input type="text" class="form-control" name="telefonoFijo" data-inputmask="'mask' : '(999) 999-9999'" value="<?php echo $perfil["telefono"]; ?>" required>
                         </div>
                     </div>
 
                     <div class="col-sm-12 col-md-5">
                         <div class="form-group">
                             <label class="form-label">Teléfono WhatsApp *</label>
-                            <input type="text" class="form-control" name="telefonoMovil" data-inputmask="'mask' : '(999) 999-9999'" required>
+                            <input type="text" class="form-control" name="telefonoMovil" data-inputmask="'mask' : '(999) 999-9999'" value="<?php echo $perfil["whatsapp"]; ?>" required>
                         </div>
                     </div>
 
                     <div class="col-sm-12 col-md-5">
                         <div class="form-group">
                             <label class="form-label">Email</label>
-                            <input type="email" class="form-control" name="email" placeholder="Email">
+                            <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo $perfil["email"]; ?>">
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-5">
+                    <!-- <div class="col-sm-12 col-md-5">
                         <div class="form-group">
                             <label class="form-label">Sitio Web</label>
-                            <input type="text" class="form-control" name="web" placeholder="web">
+                            <input type="text" class="form-control" name="web" placeholder="web" value="<?php //echo $perfil["web"]; ?>">
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
 
@@ -168,63 +192,57 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             <label class="form-label">Calle</label>
-                            <input type="text" class="form-control" name="calle" placeholder="calle" required>
+                            <input type="text" class="form-control" name="calle" placeholder="calle" value="<?php echo $perfil["calle"]; ?>" required>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             <label class="form-label">Colonia</label>
-                            <input type="text" class="form-control" name="colonia" placeholder="colonia" required>
+                            <input type="text" class="form-control" name="colonia" placeholder="colonia" value="<?php echo $perfil["colonia"]; ?>" required>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             <label class="form-label">Ciudad</label>
-                            <input type="text" class="form-control" name="ciudad" placeholder="ciudad" required>
+                            <input type="text" class="form-control" name="ciudad" placeholder="ciudad" value="<?php echo $perfil["ciudad"]; ?>" required>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             <label class="form-label">Estado</label>
-                            <input type="text" class="form-control" name="estado" placeholder="estado" required>
+                            <input type="text" class="form-control" name="estado" placeholder="estado" value="<?php echo $perfil["estado"]; ?>" required>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             <label class="form-label">Código Postal</label>
-                            <input type="text" class="form-control" name="cp" placeholder="Código Postal" required>
+                            <input type="text" class="form-control" name="cp" placeholder="Código Postal" value="<?php echo $perfil["CP"]; ?>" required>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             <label class="form-label">ZONA</label>
-                            <input type="text" class="form-control" name="zona" placeholder="Zona" required>
+                            <input type="text" class="form-control" name="zona" placeholder="Zona" value="<?php echo $perfil["zona"]; ?>" required>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card-footer text-right">
+            <!-- <div class="card-footer text-right">
                 <button type="submit" name="btnRegistrar" id="login" class="btn btn-primary">Registrar</button>
+            </div> -->
+
+            <div class="card-footer text-right">
+                <input type="text" name="clientId" class="form-control" value="<?php echo $paciente; ?>" hidden />
+                <a href="index.php?page=inicio"><button name="btnCancel" class="btn btn-warning">Cancelar</button></a>
+                <button type="submit" name="btnActualiza" id="login" class="btn btn-primary">Actualizar</button>
             </div>
             <?php
             $registro = new CitasController();
-            $registro->registraCita();
+            $registro->ctrActualiza();
             ?>
         </form>
     </div>
 
 </div>
 
-<!--JAVASCRIPT
-
-<script>
-    function asignaPrecio(medico) {
-        let select = document.querySelector("#medico");
-        var costo = select.options[select.selectedIndex].getAttribute('costo-consulta');
-        const cajaCosto = document.querySelector("#costo");
-        labelCosto = document.querySelector("#labelCosto");
-        if (costo === null) costo = 0;
-        cajaCosto.value = costo;
-        labelCosto.innerHTML = "$ " + costo;
-    }
-</script>-->
+<!-- ==============================================================================================================-->

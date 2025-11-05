@@ -44,8 +44,8 @@ Class CitasModel{
 
     public static function registraCita($datos){
         $conexion=Conexion::conectar();
-        $stmt = $conexion->prepare("INSERT INTO `solicitudes` (`id`, `responsable`, `curp`, `nombres`, `apellidos`, `cliente`, `telefono`, `whatsapp`, `email`, `fecha`, `fechaNac`, `status`, `calle`, `colonia`, `ciudad`, `estado`, `CP`, `carpeta`)
-        VALUES (NULL, :responsable,:curp,:nombres,:apellidos, :cliente, :telefono,:whatsapp,:email, :fecha,:fechaNac, 'N' ,:calle,:colonia,:ciudad,:estado,:CP,NULL);");
+        $stmt = $conexion->prepare("INSERT INTO `solicitudes` (`id`, `responsable`, `curp`, `nombres`, `apellidos`, `cliente`, `telefono`, `whatsapp`, `email`, `fecha`, `fechaNac`, `activo`, `calle`, `colonia`, `ciudad`, `estado`, `CP`, `zona`, `carpeta`)
+        VALUES (NULL, :responsable, :curp, :nombres, :apellidos, :cliente, :telefono, :whatsapp, :email, :fecha, :fechaNac, '1' ,:calle, :colonia, :ciudad, :estado, :CP, :zona, NULL);");
 
 
         $stmt -> bindParam(":responsable", $datos["responsable"], PDO::PARAM_INT);
@@ -63,6 +63,7 @@ Class CitasModel{
         $stmt -> bindParam(":ciudad", $datos["ciudad"], PDO::PARAM_STR);
         $stmt -> bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
         $stmt -> bindParam(":CP", $datos["cp"], PDO::PARAM_STR);
+        $stmt -> bindParam(":zona", $datos["zona"], PDO::PARAM_STR);
         if ($stmt -> execute()){
             $ultimoId= $conexion->lastInsertId();
             return $ultimoId;
@@ -70,6 +71,36 @@ Class CitasModel{
         else {
             return "error";
         }   
+    }
+    
+    public static function actualizaPerfil($datos){
+        $stmt = Conexion::conectar()->prepare("UPDATE `solicitudes` SET `curp`=:curp, `zona`=:zona, `nombres`=:nombres,`apellidos`=:apellidos, `cliente`=:cliente, 
+        `telefono`=:telefonoFijo, `whatsapp`=:whatsapp, `email`=:email, `fechaNac` =:fechaNac, `calle`=:calle, `colonia`=:colonia,
+        `ciudad`=:ciudad, `estado`=:estado, `CP`=:CP WHERE id = :perfilId;");
+
+		$stmt -> bindParam(":perfilId", $datos["perfilId"], PDO::PARAM_INT);
+        $stmt -> bindParam(":curp", $datos["curp"], PDO::PARAM_STR);
+        $stmt -> bindParam(":zona", $datos["zona"], PDO::PARAM_STR);
+        $stmt -> bindParam(":nombres", $datos["nombres"], PDO::PARAM_STR);
+        $stmt -> bindParam(":apellidos", $datos["apellidos"], PDO::PARAM_STR);
+        $stmt -> bindParam(":cliente", $datos["cliente"], PDO::PARAM_STR);
+        $stmt -> bindParam(":telefonoFijo", $datos["telefonoFijo"], PDO::PARAM_STR);
+        $stmt -> bindParam(":whatsapp", $datos["whatsapp"], PDO::PARAM_STR);
+        $stmt -> bindParam(":email", $datos["email"], PDO::PARAM_STR);
+        $stmt -> bindParam(":fechaNac", $datos["fechaNac"], PDO::PARAM_STR);
+        //$stmt -> bindParam(":activo", $datos["activo"], PDO::PARAM_STR);
+        $stmt -> bindParam(":calle", $datos["calle"], PDO::PARAM_STR);
+        $stmt -> bindParam(":colonia", $datos["colonia"], PDO::PARAM_STR);
+        $stmt -> bindParam(":ciudad", $datos["ciudad"], PDO::PARAM_STR);
+        $stmt -> bindParam(":estado", $datos["estado"], PDO::PARAM_STR);
+        $stmt -> bindParam(":CP", $datos["cp"], PDO::PARAM_STR);
+ 
+        if ($stmt -> execute()){
+            return "ok";
+        }
+        else {
+            return "error";
+        }
     }
 
     public static function registraPago($datos){
